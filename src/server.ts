@@ -8,6 +8,7 @@ import {
 	validatorCompiler,
 } from 'fastify-type-provider-zod'
 
+import { errorHandler } from './error-handler'
 import { checkIn } from './routes/check-in'
 import { createEvent } from './routes/create-event'
 import { getAttendeeBadge } from './routes/get-attendee-badge'
@@ -46,6 +47,8 @@ server.register(registerForEvent)
 server.register(getAttendeeBadge)
 server.register(checkIn)
 server.register(getEventAttendees)
+
+server.setErrorHandler(errorHandler)
 
 const main = async () => {
 	const port = 3333

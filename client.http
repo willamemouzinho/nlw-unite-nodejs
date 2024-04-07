@@ -1,0 +1,23 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+    "title": "NLW Summit",
+    "details": "Algo",
+    "maximumAttendees": 1
+}
+
+###
+GET http://localhost:3333/events/73e2a5a9-16fd-4588-a1d2-bcf9a88384fe
+
+###
+POST http://localhost:3333/events/73e2a5a9-16fd-4588-a1d2-bcf9a88384fe/attendees
+Content-Type: application/json
+
+{
+    "name": "rai",
+    "email": "r@gmail.com"
+}
+
+###
+GET http://localhost:3333/attendees/2/badge
